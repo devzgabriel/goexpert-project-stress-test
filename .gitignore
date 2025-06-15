@@ -1,0 +1,34 @@
+# Binários
+stress-test
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Arquivos de teste
+*.test
+
+# Arquivos de coverage
+*.out
+
+# Arquivos de dependências
+vendor/
+
+# Arquivos do IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
