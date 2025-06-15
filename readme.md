@@ -1,12 +1,21 @@
 ## Projeto Stress Test GoExpert
 
-## Como executar o projeto
-Execute o código abaixo para iniciar o projeto em Go com Docker Compose e acesse o serviço na URL `http://localhost:8080`.
+#### Como executar o projeto
+Para executar de maneira rápida, você pode utilizar o comando abaixo para buildar e executar o projeto via Docker. Certifique-se de ter o Docker instalado e configurado em sua máquina.
 ```bash
-docker compose up
+make docker-build
+
+docker run stress-test --url=http://google.com --requests=1000 --concurrency=10
 ```
 
+Para executar para um servidor local, você pode utilizar o comando abaixo:
+```bash
+make http-up
 
+make test-local
+
+make http-down
+```
 
 ## Descrição
 
@@ -38,4 +47,4 @@ Apresentar um relatório ao final dos testes contendo:
 
 #### Execução da aplicação:
 Poderemos utilizar essa aplicação fazendo uma chamada via docker. Ex:
-docker run <sua imagem docker> —url=http://google.com —requests=1000 —concurrency=10
+docker run <sua imagem docker> --url=http://google.com --requests=1000 --concurrency=10

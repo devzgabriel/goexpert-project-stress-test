@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  stress-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stress-test-app
+    networks:
+      - stress_network
+    # command: ["--url=http://httpbin.org/get", "--requests=100", "--concurrency=10"]
+    
+  test-server:
+    image: kennethreitz/httpbin
+    container_name: test-httpbin
+    networks:
+      - stress_network
+    ports:
+      - "8082:80"
+    environment:
+      - PORT=80
+
+networks:
+  stress_network:
+    driver: bridge
