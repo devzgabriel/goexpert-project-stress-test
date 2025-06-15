@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -a -o stress-test .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -o stress-test ./cmd/stress
 
 FROM alpine:latest
 
